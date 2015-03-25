@@ -1,6 +1,6 @@
 # Spoj
 SPOJ (Sphere Online Judge) is an online judge system with over 200,000 registered users and over 20000 problems. 
-A repository of all my successful Spoj code!
+This is a repository of all my successful Spoj submissions!
 You can also create a backup of your Spoj Code using :<br>
 <ul>
 <li>
