@@ -1,0 +1,2 @@
+#include<iostream>
+using namespace std;main(){int x=10;while(x!=0){x--;string g;int count=1,i=0;cin>>g;while(i<g.length()){if(g[i]=='T'||g[i]=='D'||g[i]=='F'||g[i]=='L'){count=2*count;}i++;}cout<<count<<endl;}}
