@@ -42,17 +42,20 @@ int main(){
     	scanf("%lld",&temp);
     	dp[i] = max(dp[i-1]^temp, temp);
     	if(dp[i]>=dp[max_index]){
-    		if(max_index!= i-1 or temp > dp[i-1]^temp){
+    		if(max_index!= i-1 or (temp > (dp[i-1]^temp))){
     			second_max_index = max_index;
     			max_index = i;
+                printf("1\t%lld\n",i);
     		}
     		else{
     			max_index = i;
+                printf("2\t%lld\n",i);
     		}
     	}
     	else if (second_max_index == -1 or dp[i] >= dp[second_max_index]){
-    	   if(max_index!=i-1  or temp > dp[i-1]^temp ){
+    	   if(max_index!=i-1  or (temp > (dp[i-1]^temp)) ){
             second_max_index = i;
+            printf("3\t%lld\n",i);
            }
     	}
     	i++;
