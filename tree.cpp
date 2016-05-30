@@ -26,8 +26,9 @@ bool dfs(int matrix[][10000], int visited[], int row, int n, bool *flag){
 		int i;
 		visited[row] = 1;
 		for(i = 0; i<n; i++){
-			if (matrix[row][i] == 1)
+			if (matrix[row][i] == 1){
 				dfs(matrix, visited, i, n, flag);
+			}
 		}
 		return true;
 	}
@@ -56,7 +57,14 @@ int main()
 
 	bool isTree;
 	isTree = true;
-	dfs(matrix, visited, 0, n, &isTree);
+
+	for(i = 0; i<n; i++){
+		for(m = 0; m<n; m++)
+			if (matrix[i][m] == 1){
+				dfs(matrix, visited, i, n, &isTree);
+				break;
+		}
+	}
 
 	if(isTree == true)
 		cout<<"YES";
