@@ -45,7 +45,7 @@ int main()
 
 	for(i=0; i<n; i++){
 		matrix[i][i] = -1;
-		visited[n] = -1;
+		visited[i] = -1;
 	}
 
 	while(m--){
@@ -57,13 +57,23 @@ int main()
 
 	bool isTree;
 	isTree = true;
+	bool found = false;
 
 	for(i = 0; i<n; i++){
 		for(m = 0; m<n; m++)
 			if (matrix[i][m] == 1){
 				dfs(matrix, visited, i, n, &isTree);
+				found = true;
 				break;
 		}
+		if(found)
+			break;
+	}
+
+
+	for(i=0;i<n;i++){
+		if(visited[i] == -1)
+			isTree = false;
 	}
 
 	if(isTree == true)
