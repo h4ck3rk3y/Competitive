@@ -27,6 +27,7 @@ bool dfs(int matrix[][10000], int visited[], int row, int n, bool *flag){
 		visited[row] = 1;
 		for(i = 0; i<n; i++){
 			if (matrix[row][i] == 1){
+				matrix[i][row] = -1;
 				dfs(matrix, visited, i, n, flag);
 			}
 		}
@@ -52,6 +53,7 @@ int main()
 		int a,b;
 		cin>>a>>b;
 		matrix[a-1][b-1] = 1;
+		matrix[b-1][a-1] = 1;
 	}
 
 
@@ -62,6 +64,7 @@ int main()
 	for(i = 0; i<n; i++){
 		for(m = 0; m<n; m++)
 			if (matrix[i][m] == 1){
+				matrix[m][i] = -1;
 				dfs(matrix, visited, i, n, &isTree);
 				found = true;
 				break;
